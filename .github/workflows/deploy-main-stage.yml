@@ -25,7 +25,7 @@ jobs:
       security-events: write
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up JDK
         uses: actions/setup-java@v4
@@ -89,7 +89,7 @@ jobs:
     needs: [ functional, performance, security ]
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - id: get_data
         run: |
           echo "version=$(cat gradle.properties | grep "version =" | cut -d'=' -f2)" >> $GITHUB_OUTPUT
@@ -112,7 +112,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           token: ${{ secrets.CI_GITHUB_TOKEN }}
 
@@ -145,7 +145,7 @@ jobs:
     permissions: write-all
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
