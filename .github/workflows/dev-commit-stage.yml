@@ -40,7 +40,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Setup and execute Gradle 'build' task
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v3
         with:
           arguments: build --scan
 
@@ -82,7 +82,7 @@ jobs:
           cache: gradle
 
       - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v3
 
       - name: Execute Gradle build
         run: |
